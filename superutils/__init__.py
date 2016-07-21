@@ -1,5 +1,7 @@
 __version__ = '0.0.1'
-
 __author__ = ""
 
-VERSION = __version__  # synonym
+VERSION = __version__
+
+from superutils.utils import *
+

@@ -1,5 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+@summary: 
+# build tar.gz/zip
+python setup.py sdist
+
+# install
+python setup.py install
+
+# uninstall
+python setup.py uninstall
+
+"""
 
 import os
 import re
@@ -17,7 +29,7 @@ def get_version(package):
 
 version = get_version('superutils')
 
-LONG_DESCRIPTION = open('README.rst').read()
+LONG_DESCRIPTION = open('README.md').read()
 
 setup(
     name="superutils",
@@ -28,8 +40,7 @@ setup(
     classifiers=[
         "Environment :: Python Environment",
         "Programming Language :: Python :: 2.7",
-        "Topic :: Software Development :: Libraries :: Python Modules",
-        "Private :: Do Not Upload",
+        "Topic :: Software Development :: Libraries :: Python Modules"
     ],
     keywords='superutils',
     packages=find_packages(),
