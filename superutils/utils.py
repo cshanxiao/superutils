@@ -87,5 +87,30 @@ def func_time(func):
         return result
     return _wrapper
 
+def modulefinder():
+    import sys
+    modules = sys.modules
+    modules_path = sys.path
+    
+    imported_modules = set()
+    for module_name, module in modules.iteritems():
+        str_module = str(module)
+        if not module_name or module_name.startswith("_"):
+            continue
+        if ("built-in" in str_module
+#             or "C:\Python27\lib" in str(item)
+#             or "eclipse-java-mars-2-win32" in str_value
+#             or "core." in str(item)
+            ):
+            continue
 
+        module_name = module_name.split(".")[0]
+        imported_modules.add(module_name)
+
+    for item in imported_modules:
+        print item
+    
+    paths = sys.path
+    for p in paths:
+        print p
 
